@@ -16,7 +16,7 @@ Basado en el diseño de <a href="https://github.com/BartoszJarocki/cv">Bartosz J
 </p>
 
 <p>
-Guia del tutorial <a href="https://www.youtube.com/@midulive"></a>
+Guia del tutorial <a href="https://www.youtube.com/@midulive">Midudev</a>
 </p>
 
 </div>
