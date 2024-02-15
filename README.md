@@ -73,6 +73,6 @@ npm run dev
 | ⚙️  | `build`          | Comprueba posibles errores y hace un empaquetado de producción en `./dist/`.      |
 | ⚙️  | `preview`        | Vista previa en local `localhost:4321` |
 
-
+Deploy: https://portafolio-two-khaki.vercel.app/
 
 
