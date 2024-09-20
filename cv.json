@@ -6,7 +6,7 @@
       "email": "ajrey1282@gmail.com",
       "phone": "+57 3013457012",
       "url": "",
-      "summary": "Soy un Desarrollador full stack e ingeniero de sistemas, enfocado en el lenguaje de programación JavaScript, he trabajado con bibliotecas como React js, y frameworks como angular y nextJS. Mayormente he trabajado como freelance por motivos de  estudio y entrenamiento de taekwondo a nivel competitivo, vivo en Bogota aunque estoy disponible para cambiar de ubicacion de ser requerido.",
+      "summary": "Soy un Desarrollador full stack e ingeniero de sistemas, enfocado en el lenguaje de programación JavaScript, he trabajado con bibliotecas como React js, y frameworks como angular y nextJS. vivo en Bogota aunque estoy disponible para cambiar de ubicacion de ser requerido.",
       "location": {
           "address": "",
           "postalCode": "",
@@ -35,7 +35,7 @@
   "work": [
       {
           "name": "Azordev",
-          "position": "FrontEnd Developer",
+          "position": "Fullstack Developer",
           "url": "https://www.linkedin.com/company/azordev-com/",
           "startDate": "2022-10-01",
           "endDate": "2024-04-1",
@@ -230,14 +230,14 @@
   "references": [],
   "projects": [
       {
-          "name": "",
+          "name": "BZ - Casino Online (NDA)",
           "isActive": true,
-          "description": "",
+          "description": "Popular sitio online en Brazil, participe como fullstack colaborando en un equipo multi cultural. Estuve en un equipo encargado de un nuevo juego de rifas, en los que usamos Javascript, React, Nextjs, Postgres, CSS, entre otros.",
           "highlights": [
 
           ],
           "github": "",
-          "url": ""
+          "url": "https://multicap-admin-git-dev-blaze-team.vercel.app/"
       }
   ]
 }
