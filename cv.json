@@ -230,7 +230,7 @@
   "references": [],
   "projects": [
       {
-          "name": "BZ - Casino Online (NDA)",
+          "name": "BZ - Casino Online (NDA) - En desarrollo",
           "isActive": true,
           "description": "Popular sitio online en Brazil, participe como fullstack colaborando en un equipo multi cultural. Estuve en un equipo encargado de un nuevo juego de rifas, en los que usamos Javascript, React, Nextjs, Postgres, CSS, entre otros.",
           "highlights": [
