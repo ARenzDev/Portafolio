@@ -1,13 +1,14 @@
 ---
-import { basics } from "@cv"
+import { basics } from "@cv";
+import DarkModeToggle from "../components/DarkModeToggle.astro";
 
 interface Props {
-  title: string
+  title: string;
 }
 
-const { title } = Astro.props
+const { title } = Astro.props;
 
-const { image, summary, url } = basics
+const { image, summary, url } = basics;
 ---
 
 <!doctype html>
@@ -27,18 +28,75 @@ const { image, summary, url } = basics
     <meta property="og:image" content="" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta property="twitter:domain" content={url.split("//")[1] ?? ''} />
+    <meta property="twitter:domain" content={url.split("//")[1] ?? ""} />
     <meta property="twitter:url" content={url} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={summary} />
     <meta name="twitter:image" content="" />
   </head>
   <body>
-    <slot />
+    <header class="header">
+      <div class="header-controls">
+        <!-- Componente para cambiar el modo -->
+        <DarkModeToggle />
+        <!-- Botón con la bandera de Colombia -->
+        <img class="flag-button" aria-label="Bandera de Colombia" />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 900 600"
+          width="30"
+          height="20"
+        >
+          <rect width="900" height="300" fill="#FCD116"></rect>
+          <rect y="300" width="900" height="150" fill="#003893"></rect>
+          <rect y="450" width="900" height="150" fill="#CE1126"></rect>
+        </svg>
+      </div>
+    </header>
   </body>
+
+  <main>
+    <slot />
+  </main>
 </html>
 
 <style is:global>
+  /* Variables para modo claro */
+  :root {
+    --bg-color: #fff;
+    --text-color: #333;
+    --subtext-color: #666;
+    --border-color: #ccc;
+    --icon-color: #000;
+  }
+
+  /* Variables para modo oscuro */
+  html.dark {
+    --bg-color: #121212;
+    --text-color: #fff;
+    --subtext-color: #ccc;
+    --border-color: #444;
+    --icon-color: #fff;
+  }
+
+  /* Aplicamos las variables en los elementos */
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
+
+  .header-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .flag-button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+  }
+
   html {
     font-family:
       Menlo,
@@ -102,6 +160,16 @@ const { image, summary, url } = basics
 
   .print {
     display: none !important;
+  }
+
+  header.header {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1000;
+  }
+  main {
+    margin-top: 5rem; /* Espacio para el header */
   }
 
   @media print {
