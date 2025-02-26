@@ -6,7 +6,7 @@
     "email": "ajrey1282@gmail.com",
     "phone": "+57 3013457012",
     "url": "",
-    "summary": "Soy un Desarrollador full stack e ingeniero de sistemas, enfocado en el lenguaje de programación JavaScript, he trabajado con bibliotecas como React js, y frameworks como angular y nextJS. vivo en Bogota aunque estoy disponible para cambiar de ubicacion de ser requerido.",
+    "summary": "Soy un Desarrollador Fullstack con experiencia en JavaScript, tanto en el frontend (React.js, Next.js, Vite) como en el backend (Node.js, Express.js). Además, cuento con formación como Ingeniero de Sistemas, lo que me permite tener una visión integral del desarrollo de software. Tengo conocimientos teóricos sobre AWS y herramientas de Infraestructura como Código, como Terraform.",
     "location": {
       "address": "",
       "postalCode": "",
@@ -19,11 +19,6 @@
         "network": "LinkedIn",
         "username": "renz17",
         "url": "https://www.linkedin.com/in/renz17/"
-      },
-      {
-        "network": "X",
-        "username": "JRenz177",
-        "url": "https://x.com/JRenz177"
       },
       {
         "network": "GitHub",
@@ -41,7 +36,6 @@
       "position": "Fullstack Developer",
       "url": "https://www.linkedin.com/company/azordev-com/",
       "startDate": "2022-10-01",
-      "endDate": "2024-04-1",
       "summary": "He mejorado y actualizado componentes de React, utilizando componentes funcionales y hooks, he desplegado y configurado un monorepo usando turborepo en contenedores docker",
       "highlights": []
     },
@@ -73,15 +67,6 @@
       "startDate": "2016-08-23",
       "endDate": "2023-04-18",
       "score": ""
-    },
-    {
-      "institution": "SENA",
-      "url": "https://www.sena.edu.co/es-co/Paginas/default.aspx",
-      "area": "Programacion de aplicaciones y servicios en la nube",
-      "studyType": "technical",
-      "startDate": "2023-09-11",
-      "endDate": null,
-      "score": ""
     }
   ],
   "awards": [],
@@ -98,7 +83,7 @@
       "name": "CSS",
       "level": "Avanzado",
       "keywords": ["Desarrollo Web", "Frontend", "Diseño Responsive"],
-      "description": "Hojas de estilo para diseñar páginas"
+      "description": "Creación de interfaces de usuario hermosas y receptivas"
     },
     {
       "name": "JavaScript",
@@ -135,18 +120,19 @@
       "description": "Entorno de ejecución para JavaScript en el servidor"
     },
     {
-      "name": "mongoDB",
-      "level": "Basico",
-      "keywords": [
-        "Bases de Datos",
-        "SQL",
-        "Almacenamiento de Datos",
-        "Backend"
-      ],
-      "description": "Base de datos NoSQL para aplicaciones modernas"
+      "name": "Nest",
+      "level": "Intermedio",
+      "keywords": ["Desarrollo Web", "Backend", "Node", "TypeScript"],
+      "description": "Framework de Node.js para construir aplicaciones escalables"
     },
     {
-      "name": "MySQL",
+      "name": "Express",
+      "level": "Intermedio",
+      "keywords": ["Desarrollo Web", "Backend", "Node", "JavaScript"],
+      "description": "Framework de Node.js para construir aplicaciones web y API"
+    },
+    {
+      "name": "Base de datos",
       "level": "Intermedio",
       "keywords": [
         "Bases de Datos",
@@ -154,24 +140,25 @@
         "Almacenamiento de Datos",
         "Backend"
       ],
-      "description": "Sistema de gestión de bases de datos relacional"
+      "description": "Sistema de gestión de bases de datos relacional y no relacional. (Postgres, MySQL, MongoDB)"
     },
     {
-      "name": "Git",
-      "level": "Avanzado",
-      "keywords": ["Control de Versiones", "Colaboración", "Código Fuente"],
-      "description": "Sistema de control de versiones distribuido"
-    },
-    {
-      "name": "GitHub",
+      "name": "APIs",
       "level": "Intermedio",
-      "keywords": [
-        "Control de Versiones",
-        "Colaboración",
-        "Código Fuente",
-        "Git"
-      ],
-      "description": "Plataforma para alojar y colaborar en proyectos de código"
+      "keywords": ["Desarrollo Web", "Backend", "Node", "JavaScript"],
+      "description": "Desarrollo de API RESTful y GraphQL"
+    },
+    {
+      "name": "Herramientas de Desarrollo",
+      "level": "",
+      "keywords": ["Desarrollo Web", "Colaboración", "Fullstack", "Código Fuente"],
+      "description": "Herramientas para mejorar la productividad y la calidad del código. (VSCode, Postman, Git, GitHub)"
+    },
+    {
+      "name": "Gestión de Proyectos",
+      "level": "",
+      "keywords": ["Desarrollo Web", "Colaboración", "Productividad"],
+      "description": "Herramientas y metodologías para planificar y supervisar proyectos. (Agile, Scrum, Jira)"
     },
     {
       "name": "Next.js",
@@ -183,29 +170,30 @@
         "SSR",
         "Static Generation"
       ],
-      "description": "React & Next.js\nBuilding modern web applications with React and Next.js"
+      "description": "Building modern web applications with React and Next.js"
     },
     {
       "name": "React",
       "level": "Avanzado",
       "keywords": ["Desarrollo Web", "Frontend", "JavaScript Library", "UI"],
-      "description": "React & Next.js\nBuilding modern web applications with React and Next.js"
+      "description": "Biblioteca de JavaScript para construir interfaces de usuario interactivas y eficientes."
     },
     {
-      "name": "Docker",
-      "level": "Intermedio",
+      "name": "DevOps",
+      "level": "",
       "keywords": ["Contenedores", "Despliegue"],
-      "description": "Plataforma para contenerización y despliegue"
+      "description": "Prácticas DevOps: CI/CD, Docker, AWS, Terraform"
     }
+    
   ],
   "languages": [
     {
       "language": "Spanish",
-      "fluency": "Native speaker"
+      "fluency": "Nativo"
     },
     {
       "language": "English",
-      "fluency": "Basic"
+      "fluency": "Intermedio"
     }
   ],
   "interests": [],
@@ -214,10 +202,18 @@
     {
       "name": "BZ - Casino Online (NDA) - En desarrollo",
       "isActive": true,
-      "description": "Popular sitio online en Brazil, participe como fullstack colaborando en un equipo multi cultural. Estuve en un equipo encargado de un nuevo juego de rifas, en los que usamos Javascript, React, Nextjs, Postgres, CSS, entre otros.",
-      "highlights": [],
+      "description": "Popular sitio online en Brazil, participe como fullstack colaborando en un equipo multi cultural. Estuve en un equipo encargado de un nuevo juego de rifas.",
+      "highlights": ["Javascript", "React", "Nextjs", "Postgres", "CSS", "Docker", "StoryBook", "Jest", "Node"],
       "github": "",
       "url": "https://multicap-admin-git-dev-blaze-team.vercel.app/"
+    },
+    {
+      "name": "NovaBot - En desarrollo",
+      "isActive": true,
+      "description": "Bot de discord open source para de desarrolladores, en el que se pueden realizar diferentes comandos para facilitar el trabajo en un grupo de desarrolladores, como eventos, pull request, votaciones, recordatorios.",
+      "highlights": ["Javascript", "Node", "AWS", "Discord js"],
+      "github": "https://github.com/TeamNovaSoft/novabot",
+      "url": ""
     }
   ]
 }
