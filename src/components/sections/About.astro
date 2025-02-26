@@ -14,5 +14,18 @@ const { summary } = basics
 <style>
   p {
     color: var(--subtext-color);
+    font-size: 0.8rem;
   }
+  @media print {
+  section {
+    page-break-inside: avoid; /* Evita que la sección se divida entre páginas */
+    page-break-after: auto; /* Permite que el contenido fluya naturalmente */
+  }
+
+  p {
+    font-size: 0.8rem; /* Ajusta el tamaño del texto si es necesario */
+    line-height: 1.4;
+  }
+}
+
 </style>

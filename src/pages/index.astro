@@ -1,39 +1,83 @@
 ---
-import Layout from "@/layouts/Layout.astro"
+import Layout from "@/layouts/Layout.astro";
 
-import About from "@/components/sections/About.astro"
-import Experience from "@/components/sections/Experience.astro"
-import Hero from "@/components/sections/Hero.astro"
-import Projects from "@/components/sections/Projects.astro"
-import Skills from "@/components/sections/Skills.astro"
-import KeyboardManager from "@/components/KeyboardManager.astro"
+import About from "@/components/sections/About.astro";
+import Experience from "@/components/sections/Experience.astro";
+import Hero from "@/components/sections/Hero.astro";
+import Projects from "@/components/sections/Projects.astro";
+import Skills from "@/components/sections/Skills.astro";
+import KeyboardManager from "@/components/KeyboardManager.astro";
 
-import { basics } from "@cv"
-const { name, label } = basics
+import { basics } from "@cv";
+const { name, label } = basics;
 ---
 
 <Layout title={`Portafolio de ${name} - ${label}`}>
   <main>
-    <Hero />
-    <About />
-    <Experience />
-    <Projects />
-    <Skills />
+    <div class="left-column">
+      <Hero />
+      <About />
+    </div>
+
+    <!-- Línea divisoria -->
+    <div class="divider"></div>
+
+    <div class="right-column">
+      <Experience />
+      <Projects />
+    </div>
   </main>
+  <Skills />
 
   <KeyboardManager />
 </Layout>
 
 <style>
   main {
-    padding: 4rem;
+    display: flex;
+    align-items: stretch; /* Hace que los elementos ocupen la misma altura */
+    justify-content: center;
+    max-width: 1200px;
     margin: auto;
-    width: 100%;
+    padding: 4rem;
+    gap: 2rem;
   }
 
-  @media (width <= 700px) {
+  .left-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    flex: 1;
+    max-width: 350px;
+  }
+
+  .right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    flex: 2;
+  }
+
+  /* Línea divisoria */
+  .divider {
+    width: 1px;
+    background-color: #ddd; /* Color de la línea */
+    align-self: stretch; /* Hace que la línea se estire según la altura de main */
+  }
+
+  @media (max-width: 700px) {
     main {
-      padding: 2rem;
+      flex-direction: column;
+      gap: 3rem;
+    }
+
+    .divider {
+      display: none;
+    }
+
+    .left-column,
+    .right-column {
+      max-width: 100%;
     }
   }
 </style>
