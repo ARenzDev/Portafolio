@@ -2,7 +2,7 @@ name: Changelog CI
 
 on:
   pull_request:
-    types: [opened, synchronize]  # Solo se ejecuta en PRs
+    types: [opened, reopened]
 
   workflow_dispatch:
     inputs:
@@ -17,49 +17,37 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pull-requests: write
-
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
-      - name: Configurar Git
-        run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-
-      - name: Obtener versión para Changelog
+      - name: Get Version for Changelog
         id: version_step
         run: |
           if [ -z "${{ github.event.inputs.release_version }}" ]; then
-            VERSION=$(cat version.txt)
+            echo "release_version=$(cat version.txt)" >> $GITHUB_OUTPUT
           else
-            VERSION="${{ github.event.inputs.release_version }}"
+            echo "release_version=${{ github.event.inputs.release_version }}" >> $GITHUB_OUTPUT
           fi
-          echo "release_version=$VERSION" >> $GITHUB_OUTPUT
 
       - name: Run Changelog CI
-        if: github.event_name == 'pull_request'
         uses: saadmk11/changelog-ci@v1.1.2
         with:
           changelog_filename: CHANGELOG.md
           config_file: .changelog-config.yml
           committer_username: 'github-actions[bot]'
-          committer_email: 'github-actions[bot]@users.noreply.github.com'
+          committer_email: '41898282+github-actions[bot]@users.noreply.github.com'
           release_version: ${{ steps.version_step.outputs.release_version }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Merge automático del PR
+      - name: Merge automático para conflictos
         if: github.event_name == 'pull_request'
-        uses: actions/github-script@v6
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            const prNumber = context.payload.pull_request.number;
-            await github.pulls.merge({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              pull_number: prNumber,
-              merge_method: 'squash'
-            });
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+
+          git fetch origin main
+          git checkout main
+          git merge --strategy-option theirs changelog-ci-${{ steps.version_step.outputs.release_version }} || git merge --abort
+          git add CHANGELOG.md
+          git commit -m "fix: Resuelto conflicto en CHANGELOG.md" || echo "Sin cambios para commitear"
+          git push origin main
