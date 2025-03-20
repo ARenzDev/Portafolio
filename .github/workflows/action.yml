@@ -2,7 +2,7 @@ name: Changelog CI
 
 on:
   pull_request:
-    types: [opened]
+    types: [opened, synchronize]
 
   workflow_dispatch:
     inputs:
@@ -18,7 +18,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
-      contents: write  # Asegura permisos de escritura
+      contents: write
+      pull-requests: write
 
     steps:
       - uses: actions/checkout@v2
