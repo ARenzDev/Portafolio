@@ -2,7 +2,7 @@ name: Changelog CI
 
 on:
   pull_request:
-    types: [ opened ]
+    types: [opened]
 
   workflow_dispatch:
     inputs:
@@ -21,6 +21,15 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Obtener versión para Changelog
+        id: version_step
+        run: |
+          if [ -z "${{ github.event.inputs.release_version }}" ]; then
+            echo "release_version=$(cat version.txt)" >> $GITHUB_OUTPUT
+          else
+            echo "release_version=${{ github.event.inputs.release_version }}" >> $GITHUB_OUTPUT
+          fi
+
       - name: Run Changelog CI
         uses: saadmk11/changelog-ci@v1.1.2
         with:
@@ -28,5 +37,5 @@ jobs:
           config_file: .changelog-config.yml
           committer_username: 'github-actions[bot]'
           committer_email: 'github-actions[bot]@users.noreply.github.com'
-          release_version: ${{ github.event.inputs.release_version }}
+          release_version: ${{ steps.version_step.outputs.release_version }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
