@@ -25,10 +25,14 @@ jobs:
         id: version_step
         run: |
           if [ -z "${{ github.event.inputs.release_version }}" ]; then
-            echo "release_version=$(cat version.txt)" >> $GITHUB_OUTPUT
+            VERSION=$(cat version.txt)
           else
-            echo "release_version=${{ github.event.inputs.release_version }}" >> $GITHUB_OUTPUT
+            VERSION="${{ github.event.inputs.release_version }}"
           fi
+
+          # Limpiar caracteres especiales del nombre de la versión
+          VERSION_CLEAN=$(echo "$VERSION" | tr -cd '[:alnum:]._-')
+          echo "release_version=$VERSION_CLEAN" >> $GITHUB_OUTPUT
 
       - name: Run Changelog CI
         uses: saadmk11/changelog-ci@v1.1.2
@@ -39,3 +43,4 @@ jobs:
           committer_email: 'github-actions[bot]@users.noreply.github.com'
           release_version: ${{ steps.version_step.outputs.release_version }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
+
