@@ -18,10 +18,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: write  # Asegura permisos de escritura
 
     steps:
       - uses: actions/checkout@v2
+
+      - name: Configurar Git
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
 
       - name: Obtener versión para Changelog
         id: version_step
@@ -31,8 +36,6 @@ jobs:
           else
             VERSION="${{ github.event.inputs.release_version }}"
           fi
-
-          # Limpiar caracteres especiales del nombre de la versión
           VERSION_CLEAN=$(echo "$VERSION" | tr -cd '[:alnum:]._-')
           echo "release_version=$VERSION_CLEAN" >> $GITHUB_OUTPUT
 
@@ -46,3 +49,16 @@ jobs:
           release_version: ${{ steps.version_step.outputs.release_version }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Merge PR automáticamente
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const prNumber = process.env.GITHUB_REF.split('/')[2];
+            await github.pulls.merge({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: prNumber,
+              merge_method: 'squash'
+            });
