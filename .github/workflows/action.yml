@@ -2,7 +2,7 @@ name: Changelog CI
 
 on:
   pull_request:
-    types: [opened, synchronize]
+    types: [opened, synchronize]  # Solo se ejecuta en PRs
 
   workflow_dispatch:
     inputs:
@@ -37,10 +37,10 @@ jobs:
           else
             VERSION="${{ github.event.inputs.release_version }}"
           fi
-          VERSION_CLEAN=$(echo "$VERSION" | tr -cd '[:alnum:]._-')
-          echo "release_version=$VERSION_CLEAN" >> $GITHUB_OUTPUT
+          echo "release_version=$VERSION" >> $GITHUB_OUTPUT
 
       - name: Run Changelog CI
+        if: github.event_name == 'pull_request'
         uses: saadmk11/changelog-ci@v1.1.2
         with:
           changelog_filename: CHANGELOG.md
@@ -50,13 +50,13 @@ jobs:
           release_version: ${{ steps.version_step.outputs.release_version }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Merge PR automáticamente
+      - name: Merge automático del PR
         if: github.event_name == 'pull_request'
         uses: actions/github-script@v6
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const prNumber = process.env.GITHUB_REF.split('/')[2];
+            const prNumber = context.payload.pull_request.number;
             await github.pulls.merge({
               owner: context.repo.owner,
               repo: context.repo.repo,
