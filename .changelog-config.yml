@@ -10,6 +10,8 @@ exclude_labels:
   - bot
   - dependabot
   - ci
+  - bump
+  - merge
 group_config:
   - title: Bug Fixes
     labels:

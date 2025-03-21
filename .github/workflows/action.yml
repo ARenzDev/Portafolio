@@ -37,6 +37,13 @@ jobs:
 
           echo "release_version=$version_clean" >> $GITHUB_OUTPUT
 
+      - name: Obtener último tag
+        id: get_last_tag
+        run: |
+          LAST_TAG=$(git describe --tags --abbrev=0 || echo "v0.0.0")
+          echo "Último tag: $LAST_TAG"
+          echo "last_tag=$LAST_TAG" >> $GITHUB_OUTPUT
+
       - name: Run Changelog CI
         uses: saadmk11/changelog-ci@v1.1.2
         with:
@@ -46,7 +53,7 @@ jobs:
           committer_email: "41898282+github-actions[bot]@users.noreply.github.com"
           release_version: ${{ steps.version_step.outputs.release_version }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
-
+                    
       - name: Merge automático para conflictos
         run: |
          git config --global user.name 'github-actions[bot]'
