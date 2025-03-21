@@ -1,6 +1,5 @@
 changelog_type: 'commit_message' # or 'pull_request' prueba
 header_prefix: 'Version:'
-from_ref: 'v1.0.0'
 commit_changelog: true
 comment_changelog: true
 include_unlabeled_changes: true
