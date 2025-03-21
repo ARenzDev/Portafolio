@@ -44,7 +44,7 @@ jobs:
           config_file: .changelog-config.yml
           committer_username: "github-actions[bot]"
           committer_email: "41898282+github-actions[bot]@users.noreply.github.com"
-          release_version: ${{ steps.version_step.outputs.release_version }}
+          release_version: ${{ github.event.inputs.release_version }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Merge automático para conflictos
@@ -55,7 +55,7 @@ jobs:
 
           git fetch origin main
           git checkout main
-          git merge --strategy-option theirs changelog-ci-${{ steps.version_step.outputs.release_version }} || git merge --abort
+          git merge --strategy-option theirs changelog-ci-${{ github.event.inputs.release_version }} || git merge --abort
           git add CHANGELOG.md
           git commit -m "fix: Resuelto conflicto en CHANGELOG.md" || echo "Sin cambios para commitear"
           git push origin main
