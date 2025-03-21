@@ -48,14 +48,21 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Merge automático para conflictos
-        if: github.event_name == 'pull_request'
         run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
-
-          git fetch origin main
-          git checkout main
-          git merge --strategy-option theirs changelog-ci-${{ steps.version_step.outputs.release_version }} || git merge --abort
-          git add CHANGELOG.md
-          git commit -m "fix: Resuelto conflicto en CHANGELOG.md" || echo "Sin cambios para commitear"
-          git push origin main
+         git config --global user.name 'github-actions[bot]'
+         git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+        
+         # Listamos las ramas remotas para depuración
+         git ls-remote --heads origin
+        
+         # Asegúrate de usar el nombre correcto de la rama creada por la acción
+         MERGE_BRANCH="changelog-ci-${{ steps.version_step.outputs.release_version }}"
+         echo "Intentando merge de la rama $MERGE_BRANCH a main"
+        
+         git fetch origin main
+         git checkout main
+         git merge --strategy-option theirs $MERGE_BRANCH || git merge --abort
+            git add CHANGELOG.md
+         git commit -m "fix: Resuelto conflicto en CHANGELOG.md" || echo "Sin cambios para commitear"
+         git push origin main
+        
