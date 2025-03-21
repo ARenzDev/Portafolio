@@ -12,7 +12,7 @@ on:
 
   push:
     branches:
-      - main
+      - dev
 
 jobs:
   build:
@@ -66,11 +66,11 @@ jobs:
         
          echo "✅ Se encontró la rama: $MERGE_BRANCH"
         
-         # Hacer el merge a main
-         git checkout main
-         git pull origin main  # Asegurar que estamos actualizados
+         # Hacer el merge a dev
+         git checkout dev
+         git pull origin dev  # Asegurar que estamos actualizados
          git merge --strategy-option theirs "$MERGE_BRANCH" || git merge --abort
          git add CHANGELOG.md
          git commit -m "fix: Resuelto conflicto en CHANGELOG.md" || echo "Sin cambios para commitear"
-         git push origin main
+         git push origin dev
         
