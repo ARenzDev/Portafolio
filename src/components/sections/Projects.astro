@@ -59,12 +59,22 @@ import { projects } from "@cv";
 
   article {
     border-radius: 8px;
-    border: 1px solid #f2f2f2;
+    border: 1px solid var(--border-color);
     gap: 16px;
     display: flex;
     flex-direction: column;
     padding: 16px;
     height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  }
+
+  html.dark article:hover {
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.05);
   }
 
   article header {
@@ -108,7 +118,7 @@ import { projects } from "@cv";
   }
 
   html.dark {
-    --highlight-bg: #444;
+    --highlight-bg: #222;
     --highlight-color: #ccc;
   }
 

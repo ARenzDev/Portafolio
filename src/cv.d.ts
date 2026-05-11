@@ -1,5 +1,6 @@
 export interface CV {
   basics: Basics
+  techStack: TechStack
   work: Array<Work>
   volunteer: Array<Volunteer>
   education: Array<Education>
@@ -11,6 +12,10 @@ export interface CV {
   interests: Array<Interests>
   references: Array<References>
   projects: Array<Projects>
+}
+
+interface TechStack {
+  description: string
 }
 
 interface Basics {
@@ -65,6 +70,7 @@ interface Skills {
   name: string
   level: string
   keywords: Array<string>
+  description?: string
 }
 
 interface Awards {
@@ -95,9 +101,9 @@ interface Education {
   area: string
   studyType: string
   startDate: DateStr
-  endDate: DateStr
+  endDate: DateStr | null
   score: string
-  courses: Array<string>
+  courses?: Array<string>
 }
 
 interface Languages {

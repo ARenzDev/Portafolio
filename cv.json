@@ -1,24 +1,24 @@
 {
   "basics": {
     "name": "Alberto José Rey Nuñez",
-    "label": "Fullstack developer",
+    "label": "Fullstack Developer",
     "image": "/Alberto.webp",
     "email": "ajrey1282@gmail.com",
     "phone": "+57 3013457012",
-    "url": "",
-    "summary": "Soy un Desarrollador Fullstack con experiencia en JavaScript, tanto en el frontend (React.js, Next.js, Vite) como en el backend (Node.js, Express.js). Además, cuento con formación como Ingeniero de Sistemas, lo que me permite tener una visión integral del desarrollo de software. Tengo conocimientos teóricos sobre AWS y herramientas de Infraestructura como Código, como Terraform.",
+    "url": "https://portafolio-arenzdev.vercel.app",
+    "summary": "Fullstack Developer con +4 años de experiencia construyendo productos web reales, desde la interfaz hasta el servidor y despliegue en la nube. Especializado en aplicaciones SaaS multi-tenant con Next.js, Node.js y PostgreSQL. Experiencia en arquitecturas escalables (FSD), seguridad tenant-scoped, pipelines de datos en tiempo real con Redis, y testing automatizado con Jest. Ingeniero de Sistemas con enfoque en clean architecture, type safety estricto y prácticas DevOps.",
     "location": {
       "address": "",
       "postalCode": "",
-      "city": "Bogota",
+      "city": "Bogotá",
       "countryCode": "COL",
       "region": "Colombia"
     },
     "profiles": [
       {
         "network": "LinkedIn",
-        "username": "renz17",
-        "url": "https://www.linkedin.com/in/renz17/"
+        "username": "areydev",
+        "url": "https://www.linkedin.com/in/areydev/"
       },
       {
         "network": "GitHub",
@@ -32,12 +32,38 @@
   },
   "work": [
     {
+      "name": "PenguinMails",
+      "position": "Fullstack Developer",
+      "url": "",
+      "startDate": "2025-08-01",
+      "endDate": "2026-05-01",
+      "summary": "Plataforma SaaS multi-tenant de email marketing. Diseñé e implementé pipelines de importación masiva de leads con Redis y Web Workers, sistema de borrado atómico con Async Generators, seguridad tenant-scoped con NileDB, y lideré la migración a un Design System unificado con TanStack Table y Storybook. Testing con Jest y validación con Zod.",
+      "highlights": [
+        "Next.js 15",
+        "NileDB",
+        "Redis",
+        "FSD",
+        "Jest",
+        "Zod",
+        "Storybook"
+      ]
+    },
+    {
       "name": "Azordev",
       "position": "Fullstack Developer",
       "url": "https://www.linkedin.com/company/azordev-com/",
       "startDate": "2022-10-01",
-      "summary": "He mejorado y actualizado componentes de React, utilizando componentes funcionales y hooks, he desplegado y configurado un monorepo usando turborepo en contenedores docker",
-      "highlights": []
+      "endDate": "2026-05-01",
+      "summary": "Desarrollador Fullstack en más de 7 proyectos de alto impacto, utilizando React, Next.js, Node.js y arquitecturas de microservicios. Creé scripts personalizados en Python para la automatización y generación de datasets. Fuerte defensor de prácticas SCRUM/Agile, logrando optimizar flujos de trabajo, mejorar estrategias de testing (QA) e implementar reglas de Clean Code que redujeron significativamente los bugs en producción. Contribuí directamente a la eficiencia técnica de los proyectos mediante la integración de herramientas automatizadas y optimización de procesos de desarrollo.",
+      "highlights": [
+        "React",
+        "Next.js",
+        "Node.js",
+        "Microservicios",
+        "Python",
+        "SCRUM",
+        "Clean Code"
+      ]
     },
     {
       "name": "IncubApp Venture Capital",
@@ -45,55 +71,132 @@
       "url": "",
       "startDate": "2021-05-01",
       "endDate": "2022-05-01",
-      "summary": "Diseño de interfaces de usuario para diferentes proyectos de diseño UX de aplicaciones móviles",
-      "highlights": []
+      "summary": "Diseño e implementación de interfaces de usuario para aplicaciones móviles con Flutter. Participación en el ciclo completo de UX/UI en proyectos de múltiples startups dentro del portafolio de la incubadora.",
+      "highlights": [
+        "Flutter",
+        "UI/UX",
+        "Mobile"
+      ]
     },
     {
       "name": "Freelance",
-      "position": "Freelance Developer",
-      "startDate": "2019-04-01",
+      "position": "Web Developer",
+      "startDate": "2018-04-01",
       "endDate": "2021-01-01",
-      "summary": "Desarrollador web independiente, trabajando en proyectos de maquetación y tailwindcss, también implementé landing pages para clientes del exterior a través de plataformas freelance.",
-      "highlights": []
+      "summary": "Desarrollo web independiente para clientes internacionales a través de plataformas freelance. Implementación de landing pages, maquetación responsive, y proyectos frontend con Tailwind CSS y JavaScript vanilla.",
+      "highlights": [
+        "JavaScript",
+        "Tailwind CSS",
+        "Landing Pages",
+        "Responsive Design"
+      ]
     }
   ],
-  "volunteer": [{}],
+  "volunteer": [],
   "education": [
     {
-      "institution": "Universidad de Cordoba",
+      "institution": "Universidad de Córdoba",
       "url": "https://www.unicordoba.edu.co/",
       "area": "Ingeniero de Sistemas",
       "studyType": "Bachelor",
       "startDate": "2016-08-23",
-      "endDate": "2023-04-18",
+      "endDate": "2021-12-01",
+      "score": ""
+    },
+    {
+      "institution": "SENA",
+      "url": "https://www.sena.edu.co/",
+      "area": "Programación de Aplicaciones y Servicios en la Nube",
+      "studyType": "Technologist",
+      "startDate": "2023-10-01",
+      "endDate": null,
       "score": ""
     }
   ],
   "awards": [],
-  "certificates": [],
+  "certificates": [
+    {
+      "name": "Explore Emerging Tech",
+      "date": "2025-08-01",
+      "issuer": "IBM",
+      "url": ""
+    },
+    {
+      "name": "AWS Educate Introduction to Generative AI",
+      "date": "2025-03-01",
+      "issuer": "Amazon Web Services (AWS)",
+      "url": ""
+    }
+  ],
   "publications": [],
   "skills": [
     {
       "name": "HTML",
       "level": "Avanzado",
-      "keywords": ["Desarrollo Web", "Frontend"],
+      "keywords": [
+        "Desarrollo Web",
+        "Frontend"
+      ],
       "description": "Lenguaje de marcado para estructurar páginas web"
     },
     {
       "name": "CSS",
       "level": "Avanzado",
-      "keywords": ["Desarrollo Web", "Frontend", "Diseño Responsive"],
+      "keywords": [
+        "Desarrollo Web",
+        "Frontend",
+        "Diseño Responsive"
+      ],
       "description": "Creación de interfaces de usuario hermosas y receptivas"
     },
     {
       "name": "JavaScript",
       "level": "Avanzado",
-      "keywords": ["Desarrollo Web", "Frontend", "Backend", "Fullstack"],
+      "keywords": [
+        "Desarrollo Web",
+        "Frontend",
+        "Backend",
+        "Fullstack"
+      ],
       "description": "Lenguaje de programación para la web"
     },
     {
+      "name": "TypeScript",
+      "level": "Avanzado",
+      "keywords": [
+        "Desarrollo Web",
+        "Frontend",
+        "Backend",
+        "JavaScript Superset"
+      ],
+      "description": "Superset de JavaScript con tipado estático estricto"
+    },
+    {
+      "name": "React",
+      "level": "Avanzado",
+      "keywords": [
+        "Desarrollo Web",
+        "Frontend",
+        "JavaScript Library",
+        "UI"
+      ],
+      "description": "Biblioteca de JavaScript para construir interfaces de usuario interactivas y eficientes."
+    },
+    {
+      "name": "Next.js",
+      "level": "Avanzado",
+      "keywords": [
+        "Desarrollo Web",
+        "Frontend",
+        "React Framework",
+        "SSR",
+        "Static Generation"
+      ],
+      "description": "Framework fullstack para aplicaciones web con React, SSR y App Router"
+    },
+    {
       "name": "Tailwind",
-      "level": "Intermedio",
+      "level": "Avanzado",
       "keywords": [
         "Desarrollo Web",
         "Frontend",
@@ -103,96 +206,98 @@
       "description": "Framework CSS basado en utilidades"
     },
     {
-      "name": "TypeScript",
-      "level": "Intermedio",
+      "name": "Node",
+      "level": "Avanzado",
       "keywords": [
         "Desarrollo Web",
-        "Frontend",
         "Backend",
-        "JavaScript Superset"
+        "JavaScript",
+        "Servidor"
       ],
-      "description": "Superset de JavaScript con tipado estático"
-    },
-    {
-      "name": "Node",
-      "level": "Intermedio",
-      "keywords": ["Desarrollo Web", "Backend", "JavaScript", "Servidor"],
       "description": "Entorno de ejecución para JavaScript en el servidor"
-    },
-    {
-      "name": "Nest",
-      "level": "Intermedio",
-      "keywords": ["Desarrollo Web", "Backend", "Node", "TypeScript"],
-      "description": "Framework de Node.js para construir aplicaciones escalables"
     },
     {
       "name": "Express",
       "level": "Intermedio",
-      "keywords": ["Desarrollo Web", "Backend", "Node", "JavaScript"],
+      "keywords": [
+        "Desarrollo Web",
+        "Backend",
+        "Node",
+        "JavaScript"
+      ],
       "description": "Framework de Node.js para construir aplicaciones web y API"
     },
     {
-      "name": "Base de datos",
+      "name": "Nest",
       "level": "Intermedio",
+      "keywords": [
+        "Desarrollo Web",
+        "Backend",
+        "Node",
+        "TypeScript"
+      ],
+      "description": "Framework de Node.js para construir aplicaciones escalables"
+    },
+    {
+      "name": "Base de datos",
+      "level": "Avanzado",
       "keywords": [
         "Bases de Datos",
         "SQL",
         "Almacenamiento de Datos",
         "Backend"
       ],
-      "description": "Sistema de gestión de bases de datos relacional y no relacional. (Postgres, MySQL, MongoDB)"
+      "description": "PostgreSQL, MySQL, MongoDB, NileDB (multi-tenant)"
     },
     {
       "name": "APIs",
-      "level": "Intermedio",
-      "keywords": ["Desarrollo Web", "Backend", "Node", "JavaScript"],
-      "description": "Desarrollo de API RESTful y GraphQL"
+      "level": "Avanzado",
+      "keywords": [
+        "Desarrollo Web",
+        "Backend",
+        "Node",
+        "JavaScript"
+      ],
+      "description": "Desarrollo de API RESTful, GraphQL y Server Actions"
     },
     {
       "name": "Herramientas de Desarrollo",
       "level": "",
-      "keywords": ["Desarrollo Web", "Colaboración", "Fullstack", "Código Fuente"],
-      "description": "Herramientas para mejorar la productividad y la calidad del código. (VSCode, Postman, Git, GitHub)"
+      "keywords": [
+        "Desarrollo Web",
+        "Colaboración",
+        "Fullstack",
+        "Código Fuente"
+      ],
+      "description": "VSCode, Postman, Git, GitHub, Storybook"
     },
     {
       "name": "Gestión de Proyectos",
       "level": "",
-      "keywords": ["Desarrollo Web", "Colaboración", "Productividad"],
-      "description": "Herramientas y metodologías para planificar y supervisar proyectos. (Agile, Scrum, Jira)"
-    },
-    {
-      "name": "Next.js",
-      "level": "Intermediate",
       "keywords": [
         "Desarrollo Web",
-        "Frontend",
-        "React Framework",
-        "SSR",
-        "Static Generation"
+        "Colaboración",
+        "Productividad"
       ],
-      "description": "Building modern web applications with React and Next.js"
-    },
-    {
-      "name": "React",
-      "level": "Avanzado",
-      "keywords": ["Desarrollo Web", "Frontend", "JavaScript Library", "UI"],
-      "description": "Biblioteca de JavaScript para construir interfaces de usuario interactivas y eficientes."
+      "description": "Agile, Scrum, Jira, GitHub Projects"
     },
     {
       "name": "DevOps",
       "level": "",
-      "keywords": ["Contenedores", "Despliegue"],
-      "description": "Prácticas DevOps: CI/CD, Docker, AWS, Terraform"
+      "keywords": [
+        "Contenedores",
+        "Despliegue"
+      ],
+      "description": "CI/CD, Docker, AWS (EC2, DynamoDB), GitHub Actions, Terraform"
     }
-    
   ],
   "languages": [
     {
-      "language": "Spanish",
+      "language": "Español",
       "fluency": "Nativo"
     },
     {
-      "language": "English",
+      "language": "Inglés",
       "fluency": "Intermedio"
     }
   ],
@@ -200,18 +305,64 @@
   "references": [],
   "projects": [
     {
-      "name": "BZ - Casino Online (NDA) - En desarrollo",
-      "isActive": true,
-      "description": "Popular sitio online en Brazil, participe como fullstack colaborando en un equipo multi cultural. Estuve en un equipo encargado de un nuevo juego de rifas.",
-      "highlights": ["Javascript", "React", "Nextjs", "Postgres", "CSS", "Docker", "StoryBook", "Jest", "Node"],
+      "name": "PenguinMails - Email Marketing SaaS",
+      "isActive": false,
+      "description": "Plataforma SaaS multi-tenant para gestión de campañas de email marketing. Arquitectura FSD con Next.js 15, importación masiva de leads con Redis y Web Workers, seguridad cross-tenant con NileDB, y sistema de invitaciones con control de roles. Migración completa a Design System unificado.",
+      "highlights": [
+        "Next.js 15",
+        "TypeScript",
+        "NileDB",
+        "Redis",
+        "Zod",
+        "Jest",
+        "Docker",
+        "Storybook"
+      ],
       "github": "",
-      "url": "https://multicap-admin-git-dev-blaze-team.vercel.app/"
+      "url": ""
     },
     {
-      "name": "NovaBot - En desarrollo",
-      "isActive": true,
-      "description": "Bot de discord open source para de desarrolladores, en el que se pueden realizar diferentes comandos para facilitar el trabajo en un grupo de desarrolladores, como eventos, pull request, votaciones, recordatorios.",
-      "highlights": ["Javascript", "Node", "AWS", "Discord js"],
+      "name": "BZ - Casino Online (NDA)",
+      "isActive": false,
+      "description": "Plataforma de entretenimiento online en Brasil. Participé como fullstack en un equipo multicultural, desarrollando un nuevo módulo de juego de rifas con React, Next.js y PostgreSQL.",
+      "highlights": [
+        "React",
+        "Next.js",
+        "PostgreSQL",
+        "Docker",
+        "Storybook",
+        "Jest",
+        "Node.js"
+      ],
+      "github": "",
+      "url": ""
+    },
+    {
+      "name": "AI Dataset Generator pipeline",
+      "isActive": false,
+      "description": "Pipeline automatizado en Python para la generación de datasets de alta calidad (DPO entries) utilizando modelos de lenguaje (LLMs) a través del SDK de Portkey AI. El script procesa prompts maestros, orquesta llamadas a la API de LLMs y estructura las respuestas en formato JSON para el entrenamiento y fine-tuning de modelos de Machine Learning.",
+      "highlights": [
+        "Python",
+        "Portkey AI",
+        "LLMs",
+        "Prompt Engineering",
+        "Data Engineering",
+        "JSON"
+      ],
+      "github": "",
+      "url": ""
+    },
+    {
+      "name": "NovaBot",
+      "isActive": false,
+      "description": "Bot de Discord open source para equipos de desarrollo. Permite gestionar eventos, pull requests, votaciones y recordatorios. Contribuciones a la comunidad open source TeamNovaSoft.",
+      "highlights": [
+        "JavaScript",
+        "Node.js",
+        "AWS",
+        "Discord.js",
+        "Open Source"
+      ],
       "github": "https://github.com/TeamNovaSoft/novabot",
       "url": ""
     }

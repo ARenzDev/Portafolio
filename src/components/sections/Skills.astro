@@ -143,15 +143,21 @@ const toolSkills = skills.filter(
     background: transparent;
     padding: 0.5rem;
     gap: 0.5rem;
-    border: 1px solid var(--border-color, #ccc);
+    border: 1px solid var(--border-color);
     border-radius: 6px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+
+  li:hover {
+    transform: translateY(-2px);
+    border-color: var(--text-color);
   }
 
   :root {
-    --border-color: #ccc;
+    --border-color: #eee;
   }
   html.dark {
-    --border-color: #ccc;
+    --border-color: #333;
   }
 
   .icon svg {
@@ -164,7 +170,7 @@ const toolSkills = skills.filter(
     --icon-color: #000;
   }
   html.dark {
-    --icon-color: #000;
+    --icon-color: #fff;
   }
 
   .skill-text {
