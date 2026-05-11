@@ -319,7 +319,7 @@
         "Storybook"
       ],
       "github": "",
-      "url": ""
+      "url": "https://penguinmails-landing.vercel.app/"
     },
     {
       "name": "BZ - Casino Online (NDA)",
@@ -334,8 +334,7 @@
         "Jest",
         "Node.js"
       ],
-      "github": "",
-      "url": ""
+      "github": ""
     },
     {
       "name": "AI Dataset Generator pipeline",
@@ -349,8 +348,7 @@
         "Data Engineering",
         "JSON"
       ],
-      "github": "",
-      "url": ""
+      "github": ""
     },
     {
       "name": "NovaBot",
@@ -363,8 +361,7 @@
         "Discord.js",
         "Open Source"
       ],
-      "github": "https://github.com/TeamNovaSoft/novabot",
-      "url": ""
+      "github": "https://github.com/TeamNovaSoft/novabot"
     }
   ]
 }
