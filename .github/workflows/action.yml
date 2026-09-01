@@ -1,0 +1,83 @@
+name: Changelog CI  #prueba
+
+on:
+  pull_request:
+    types: [opened, reopened]
+
+  workflow_dispatch:
+    inputs:
+      release_version:
+        description: "Set Release Version"
+        required: true
+
+  push:
+    branches:
+      - dev
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Get Version for Changelog
+        id: version_step
+        run: |
+          if [ -z "${{ github.event.inputs.release_version }}" ]; then
+          version=$(cat version.txt)
+          else
+          version="${{ github.event.inputs.release_version }}"
+          fi
+
+          # Limpiamos caracteres no válidos en la versión
+          version_clean=$(echo "$version" | tr -d '[:space:]' | tr -cd '[:alnum:]._-')
+
+          echo "release_version=$version_clean" >> $GITHUB_OUTPUT
+
+      - name: Obtener último tag
+        id: get_last_tag
+        run: |
+          LAST_TAG=$(git describe --tags --abbrev=0 || echo "v0.0.0")
+          echo "Último tag: $LAST_TAG"
+          echo "last_tag=$LAST_TAG" >> $GITHUB_OUTPUT
+
+      - name: Run Changelog CI
+        uses: saadmk11/changelog-ci@v1.1.2
+        with:
+          changelog_filename: CHANGELOG.md
+          config_file: .changelog-config.yml
+          committer_username: "github-actions[bot]"
+          committer_email: "41898282+github-actions[bot]@users.noreply.github.com"
+          release_version: ${{ steps.version_step.outputs.release_version }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+                    
+      - name: Merge automático para conflictos
+        run: |
+         git config --global user.name 'github-actions[bot]'
+         git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+        
+         # Listamos las ramas remotas
+         git fetch origin
+         git ls-remote --heads origin
+        
+         # Buscamos la rama más reciente con el formato changelog-ci-<version>*
+         MERGE_BRANCH=$(git ls-remote --heads origin "refs/heads/changelog-ci-${{ steps.version_step.outputs.release_version }}*" | awk '{print $2}' | sed 's|refs/heads/||' | tail -n 1)
+        
+         if [ -z "$MERGE_BRANCH" ]; then
+             echo "❌ No se encontró ninguna rama changelog-ci-${{ steps.version_step.outputs.release_version }}*"
+             exit 1
+         fi
+        
+         echo "✅ Se encontró la rama: $MERGE_BRANCH"
+        
+         # Hacer el merge a dev
+         git checkout dev
+         git pull origin dev  # Asegurar que estamos actualizados
+         git merge --strategy-option theirs "$MERGE_BRANCH" || git merge --abort
+         git add CHANGELOG.md
+         git commit -m "fix: Resuelto conflicto en CHANGELOG.md" || echo "Sin cambios para commitear"
+         git push origin dev
+        
