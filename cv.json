@@ -305,6 +305,45 @@
   "references": [],
   "projects": [
     {
+      "name": "Cuentas Claras",
+      "isActive": false,
+      "description": "Aplicación móvil offline-first enfocada en la gestión de deudas y préstamos. Permite registrar acreedores o deudores, hacer seguimiento de abonos y cuotas, y calcular saldos pendientes de forma visual y segura mediante almacenamiento local con SQLite.",
+      "highlights": [
+        "React Native",
+        "Expo",
+        "SQLite"
+      ],
+      "github": ""
+    },
+    {
+      "name": "Mediclinic",
+      "isActive": false,
+      "description": "Sistema integral B2B para la gestión de clínicas médicas construido en una arquitectura de monorepo (Turborepo). Facilita la administración de citas, control de historiales clínicos y gestión de pacientes, integrando Supabase para la autenticación y un backend robusto con NestJS y Prisma.",
+      "highlights": [
+        "Next.js",
+        "NestJS",
+        "Prisma",
+        "PostgreSQL",
+        "Supabase",
+        "TypeScript"
+      ],
+      "github": "",
+      "url": "https://mediclinic-web.vercel.app/"
+    },
+    {
+      "name": "TaekwonApp",
+      "isActive": false,
+      "description": "Plataforma móvil diseñada para la administración integral de academias de artes marciales. Optimiza el control de asistencias, seguimiento de progreso por cinturones y gestión de estudiantes, aprovechando Firebase para sincronización en la nube y SQLite para persistencia local de datos.",
+      "highlights": [
+        "React Native",
+        "Expo",
+        "Firebase",
+        "SQLite"
+      ],
+      "github": "",
+      "url": "https://taekwon-app.vercel.app/"
+    },
+    {
       "name": "PenguinMails - Email Marketing SaaS",
       "isActive": false,
       "description": "Plataforma SaaS multi-tenant para gestión de campañas de email marketing. Arquitectura FSD con Next.js 15, importación masiva de leads con Redis y Web Workers, seguridad cross-tenant con NileDB, y sistema de invitaciones con control de roles. Migración completa a Design System unificado.",
